@@ -3,32 +3,104 @@
   margin: 0;
   padding: 0;
 }
+
+:root {
+  --nav-height: 50px;
+}
 body {
-  margin-top: 100px;
+  margin-top: var(--nav-height);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+nav {
+  position: fixed;
+  top: 0px;
+  z-index: 10;
+  background-color: hsl(180, 100%, 11%);
+  width: 100vw;
+  height: var(--nav-height);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: hsl(0, 0%, 0%);
+  line-height: var(--nav-height);
+  width: calc(100% / 4);
+  text-align: center;
+}
+
+nav a:hover {
+  background-color: hsl(180, 100%, 20%);
+}
 
 #hero {
   height: 60vh;
+  margin-top: 0px;
+  padding-top: 0px;
+
   /* add Space_Transportation as background image */
+  background-image: url(./Space_Transportation.jpg);
+  background-position: center;
+  background-size: cover;
+  position: relative;
 }
 
 #hero-img {
   /* add position */
   /* and if you want transition effects */
+  width: 40%;
+  position: absolute;
+  right: 55px;
+  bottom: -50px;
+  transition: 1s;
 }
 
 #hero:hover #hero-img {
   /* animate size position and rotation */
+  transform: scale(0.3) translate(-50px, -250px) rotate(3turn);
+  opacity: 0;
 }
-
+/* The below transformation doesn't work well because it all happens too fst, a transition needs to be applied directly to the object! */
 /* comment above and uncomment bellow: why this doesn't work well?? */
 /* #hero-img:hover{
     transform: scale(.3) translate(-50px, -250px) rotate(3turn);
 } */
 
 main {
-    width: 90vw;
-    margin: auto;
-    background-color: thistle;
-  }
+  width: 100vw;
+  background-color: thistle;
+}
+
+h1 {
+  margin-left: 20px;
+  padding-top: calc(var(--nav-height)+ 2vh);
+}
+
+.doc-section {
+  margin-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+ul {
+  list-style-position: inside;
+}
+
+ul a {
+  text-decoration: none;
+  line-height: 2rem;
+}
+
+h2,
+p {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
